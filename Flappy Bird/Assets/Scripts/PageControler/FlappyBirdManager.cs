@@ -8,7 +8,13 @@ public class FlappyBirdManager : MonoBehaviour
 
     private const string BESTCORE = "BESTCORE";
 
-    
+    void Awake()
+    {
+        _makeInstance();
+        _initialGame();
+        PlayerPrefs.SetInt(BESTCORE, 10);
+
+    }
 
     void _initialGame()
     {
@@ -18,8 +24,6 @@ public class FlappyBirdManager : MonoBehaviour
             PlayerPrefs.SetInt("INITIAL_GAME_FLAPPY_BIRD", 0);
         }
     }
-
-
 
     void _makeInstance()
     {
@@ -32,13 +36,6 @@ public class FlappyBirdManager : MonoBehaviour
             instance = null;
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    void Awake()
-    {
-        _makeInstance();
-        _initialGame();
-
     }
 
     public void _setBestScore(int score)

@@ -19,8 +19,8 @@ public class GamePlayController : MonoBehaviour
 
     void Awake()
     {
-        Time.timeScale = 0;
         _MakeInstance();
+        Time.timeScale = 0;
         birdObject.SetActive(false);
         gameOverPanel.SetActive(false);
 
@@ -52,13 +52,27 @@ public class GamePlayController : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         endScore.text = _score.ToString();
-      
-       //bestScore.text = "" + FlappyBirdManager.instance._getBestCores();
-        if (_score > FlappyBirdManager.instance._getBestScore())
+        bestScore.text = "" + FlappyBirdManager.instance._getBestScore();
+
+        int aaaa = FlappyBirdManager.instance._getBestScore();
+        if (_score > aaaa)
         {
             FlappyBirdManager.instance._setBestScore(_score);
         }
-        
+        bestScore.text = "" + FlappyBirdManager.instance._getBestScore();
+
+    }
+
+    [System.Obsolete]
+    public void _onClickExit()
+    {
+        Application.LoadLevel("HomeMenu");
+    }
+
+    [System.Obsolete]
+    public void _onClickReplay()
+    {
+        Application.LoadLevel("PlayScene");
     }
 
 }

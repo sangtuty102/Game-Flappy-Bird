@@ -21,13 +21,14 @@ public class PipeController : MonoBehaviour
             {
                 Destroy(GetComponent<PipeController>());
             }
+            vantoc += BirdController.instance.score /10;
         }
         transform.position += Vector3.left * vantoc * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.tag == "Destroy")
+        if (collider.tag == "Destroy")
         {
             Destroy(gameObject);
         }

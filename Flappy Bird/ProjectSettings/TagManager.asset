@@ -9,6 +9,7 @@ TagManager:
   - PipeHolder
   - Pipe
   - BGFloor
+  - Distroy
   layers:
   - Default
   - TransparentFX
