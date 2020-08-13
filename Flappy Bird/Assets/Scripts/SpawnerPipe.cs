@@ -27,6 +27,7 @@ public class SpawnerPipe : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("aaa");
         if (collision.tag == "sang")
         {
             Destroy(this);

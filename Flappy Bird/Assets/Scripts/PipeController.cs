@@ -30,7 +30,7 @@ public class PipeController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Destroy")
+        if (collider.tag == "Distroy")
         {
             Destroy(gameObject);
         }
