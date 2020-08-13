@@ -33,7 +33,7 @@ public class FlappyBirdManager : MonoBehaviour
         }
         else
         {
-            instance = null;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }

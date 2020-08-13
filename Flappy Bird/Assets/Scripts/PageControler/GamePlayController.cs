@@ -53,11 +53,11 @@ public class GamePlayController : MonoBehaviour
         gameOverPanel.SetActive(true);
         endScore.text = _score.ToString();
         bestScore.text = "" + FlappyBirdManager.instance._getBestScore();
-
-        int aaaa = FlappyBirdManager.instance._getBestScore();
+        var instanFlappManager = FlappyBirdManager.instance;
+        int aaaa = instanFlappManager._getBestScore();
         if (_score > aaaa)
         {
-            FlappyBirdManager.instance._setBestScore(_score);
+            instanFlappManager._setBestScore(_score);
         }
         bestScore.text = "" + FlappyBirdManager.instance._getBestScore();
 
