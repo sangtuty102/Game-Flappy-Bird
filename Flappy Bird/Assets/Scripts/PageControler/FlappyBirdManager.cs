@@ -12,7 +12,6 @@ public class FlappyBirdManager : MonoBehaviour
     {
         _makeInstance();
         _initialGame();
-        PlayerPrefs.SetInt(BESTCORE, 10);
 
     }
 
@@ -20,7 +19,7 @@ public class FlappyBirdManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("INITIAL_GAME_FLAPPY_BIRD"))
         {
-            PlayerPrefs.SetInt(BESTCORE, 10);
+            PlayerPrefs.SetInt(BESTCORE, 0);
             PlayerPrefs.SetInt("INITIAL_GAME_FLAPPY_BIRD", 0);
         }
     }
