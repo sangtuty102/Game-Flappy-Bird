@@ -22,7 +22,7 @@ public class BirdController : MonoBehaviour
     private bool isAlive;
     private bool didFlap;
     public float flag = 0;
-    public int score = 0;
+    public float score = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -85,7 +85,7 @@ public class BirdController : MonoBehaviour
 
             if (GamePlayController.instance != null)
             {
-                GamePlayController.instance._setScore(score: score);
+                GamePlayController.instance._setScore(score: (int)score);
             }
 
             audioSource.PlayOneShot(pingSounds);
@@ -105,7 +105,7 @@ public class BirdController : MonoBehaviour
                 animator.SetTrigger("Died");
                 if (GamePlayController.instance != null)
                 {
-                    GamePlayController.instance._showPanelGameOver(score);
+                    GamePlayController.instance._showPanelGameOver((int)score);
                 }
             }
         }

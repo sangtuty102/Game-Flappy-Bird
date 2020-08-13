@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,8 +22,9 @@ public class PipeController : MonoBehaviour
             {
                 Destroy(GetComponent<PipeController>());
             }
-            vantoc += BirdController.instance.score /10;
         }
+        vantoc += (BirdController.instance.score / 100);
+        //Debug.Log((BirdController.instance.score / 100));
         transform.position += Vector3.left * vantoc * Time.deltaTime;
     }
 
