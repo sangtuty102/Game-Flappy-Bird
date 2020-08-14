@@ -55,6 +55,7 @@ public class GamePlayController : MonoBehaviour
         bestScore.text = "" + FlappyBirdManager.instance._getBestScore();
         var instanFlappManager = FlappyBirdManager.instance;
         int aaaa = instanFlappManager._getBestScore();
+        /*Debug.Log("best" + aaaa);*/
         if (_score > aaaa)
         {
             instanFlappManager._setBestScore(_score);

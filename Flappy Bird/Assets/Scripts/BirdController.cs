@@ -85,7 +85,7 @@ public class BirdController : MonoBehaviour
 
             if (GamePlayController.instance != null)
             {
-                GamePlayController.instance._setScore(score: (int)score);
+                GamePlayController.instance._setScore((int)score);
             }
 
             audioSource.PlayOneShot(pingSounds);
@@ -96,17 +96,12 @@ public class BirdController : MonoBehaviour
         if (collision.gameObject.tag == "Pipe" || collision.gameObject.tag == "BGFloor")
         {
             flag = 1;
-            if (isAlive)
+            Destroy(spawnerPipe);
+            audioSource.PlayOneShot(diedSounds);
+            animator.SetTrigger("Died");
+            if (GamePlayController.instance != null)
             {
-                isAlive = false;
-
-                Destroy(spawnerPipe);
-                audioSource.PlayOneShot(diedSounds);
-                animator.SetTrigger("Died");
-                if (GamePlayController.instance != null)
-                {
-                    GamePlayController.instance._showPanelGameOver((int)score);
-                }
+                GamePlayController.instance._showPanelGameOver((int)score);
             }
         }
     }
